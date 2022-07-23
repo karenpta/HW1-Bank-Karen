@@ -12,7 +12,7 @@ public class Main {
         Account.add(new PremiumAccount(3));
 
         for (IAccount account : Account) {
-            account.Deposit(100);
+            account.Deposit(200);
             System.out.println("To withdraw 500, " + account.GetAccountNumber() + " can only  withdraw " + account.Withdraw(500));
 
         }

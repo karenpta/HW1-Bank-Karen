@@ -24,7 +24,7 @@ public class Bank implements IBank{
                 if(x.GetCurrentBalance() >= 0){
                     bal = x;
                 }else{
-                    System.out.println("this account cannot be closed due to debt");
+                    System.out.println("debt cannot close");
                 }
             }
         }
