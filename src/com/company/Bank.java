@@ -18,18 +18,18 @@ public class Bank implements IBank{
 
     @Override
     public void CloseAccount(int accountNumber) {
-        IAccount temp = null;
+        IAccount bal = null;
         for (IAccount x :  this.Account){
             if(x.GetAccountNumber() == accountNumber){
                 if(x.GetCurrentBalance() >= 0){
-                    temp = x;
+                    bal = x;
                 }else{
                     System.out.println("this account cannot be closed due to debt");
                 }
             }
         }
-        if(temp != null){
-            this.Account.remove(temp);
+        if(bal != null){
+            this.Account.remove(bal);
         }
 
     }
@@ -41,24 +41,24 @@ public class Bank implements IBank{
 
     @Override
     public List<IAccount> GetAllAccountsInDebt() {
-        List<IAccount> temp = new ArrayList<>();
+        List<IAccount> bal = new ArrayList<>();
         for(IAccount x : this.Account){
             if(x.GetCurrentBalance() < 0){
-                temp.add(x);
+                bal.add(x);
             }
         }
-        return temp;
+        return bal;
     }
 
     @Override
     public List<IAccount> GetAllAccountsWithBalance(double balanceAbove) {
-        List<IAccount> temp = new ArrayList<>();
+        List<IAccount> bal = new ArrayList<>();
         for(IAccount x : this.Account){
             if(x.GetCurrentBalance() > balanceAbove){
-                temp.add(x);
+                bal.add(x);
             }
         }
-        return temp;
+        return bal;
 
     }
 

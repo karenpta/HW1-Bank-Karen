@@ -5,7 +5,7 @@ public class StandardAccount implements IAccount {
     protected int accountNumber;
     protected double creditLimit;
 
-    public StandardAccount(int acountNumber , double creditLimit) {
+    public StandardAccount(int accountNumber , double creditLimit) {
         this.accountNumber = accountNumber;
         if (creditLimit>0) {
             creditLimit=0;
@@ -23,9 +23,9 @@ public class StandardAccount implements IAccount {
     @Override
     public double Withdraw(double amount) {
         if (currentBalance - amount < creditLimit && currentBalance != creditLimit ) {
-            double temp =  currentBalance +(-creditLimit);
-            currentBalance -= temp;
-            return temp;
+            double bal =  currentBalance +(-creditLimit);
+            currentBalance -= bal;
+            return bal;
         }
         else if (currentBalance == creditLimit) {
             return 0;
