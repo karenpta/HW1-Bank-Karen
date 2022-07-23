@@ -15,16 +15,16 @@ public class BasicAccount implements IAccount {
 
     @Override
     public void Deposit(double amount) {
-        currentBalance = currentBalance + amount;
+        currentBalance += amount;
     }
 
     @Override
     public double Withdraw(double amount) {
         if (amount > withdrawalLimit) {
-            currentBalance = currentBalance - withdrawalLimit;
+            currentBalance -= withdrawalLimit;
             return withdrawalLimit;
         } else {
-            currentBalance = currentBalance - amount;
+            currentBalance -= amount;
             return amount;
         }
     }
